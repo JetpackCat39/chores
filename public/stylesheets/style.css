@@ -58,3 +58,8 @@ a {
 .login > form {
   margin: 20px 0;
 }
+
+.main {
+  width: auto;
+  height: auto;
+}
