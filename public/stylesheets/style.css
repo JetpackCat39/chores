@@ -1,8 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Roboto', sans-serif;
+  background: #eee;
 }
 
 a {
   color: #00B7FF;
+}
+
+.round-rect {
+  background: #ffdbf4;
+  border-radius: 10px;
+}
+
+.login {
+  width: 500px;
+  height: 500px;
+  top: 100px;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login > h1 {
+  color: #686f7a;
+  padding-top: 50px !important;
+  font-weight: 100;
+}
+
+.login > input {
+  border: none;
+  background: #eee;
+  border-radius: 5px;
+  color: #686f7a;
+}
+
+.login > input::selection {
+  border: none;
 }
