@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <div class="round-rect centered login">
+        <h1 class="centered">create account</h1>
+        <form>
+            <input type="text" name="email" placeholder="email"><br>
+            <input type="text" name="username" placeholder="username"><br>
+            <input type="text" name="password" placeholder="password"><br>
+            <button type="submit">create</button>
+        </form>
+        <a href="/" onclick="MongoClient.connect('mongodb://admin:password@ds149201.mlab.com:49201/taskmaster', function (err, db) {db.collection('users').insertOne([{name: username, email: email, password: password, level: null}])}">log in</a><br>
+        <a href="/">forgot password?</a>
+    </div>
+</body>
+</html>

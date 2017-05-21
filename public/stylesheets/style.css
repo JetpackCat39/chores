@@ -7,18 +7,19 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
 }
 
 .round-rect {
-  background: #ffdbf4;
+  background: #ffdede;
   border-radius: 10px;
 }
 
 .login {
   width: 500px;
-  height: 500px;
+  height: auto;
   top: 100px;
+  padding: 50px 0;
 }
 
 .centered {
@@ -29,22 +30,31 @@ a {
 .login > h1 {
   /*color: #686f7a;*/
   font: 32px 'Roboto', sans-serif;
-  padding-top: 50px;
   color: #4d4d4d;
   font-weight: 100;
 }
 
-.login > input {
+.login > form > input, .login > form > button {
   border: none;
   background: #eee;
   border-radius: 5px;
   color: #4d4d4d;
   padding-left: 10px;
   font: 14px 'Roboto', sans-serif;
-  height: 80px;
+  margin-top: 10px;
+  height: 60px;
 }
 
-.login > input:focus {
+.login > form > input:focus, .login > form > button:focus {
   outline: none;
   color: #4d4d4d;
+}
+
+.login > a {
+  color: #4d4d4d;
+  font: 14px 'Roboto', sans-serif;
+}
+
+.login > form {
+  margin: 20px 0;
 }

@@ -5,8 +5,25 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var login = require('./routes/login');
+var newacc = require('./routes/newacc');
+
+var database = null;
+
+var MongoClient = require('mongodb').MongoClient;
+
+MongoClient.connect('mongodb://admin:password@ds149201.mlab.com:49201/taskmaster', function (err, db) {
+    if (err) throw err;
+    database = db;
+    db.collection('users').find().toArray(function (err, result) {
+        if (err) throw err;
+
+        // console.log(getByValue(result, "evan.thurston@gmail.com"))
+        console.log(result)
+    })
+});
+
+var loggedIn = false;
 
 var app = express();
 
@@ -22,8 +39,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+if(loggedIn === false) {
+    app.use('/', login);
+} else {
+    app.use('/', newacc);
+}
+// login();
+app.use('/login', login);
+app.use('/newacc', newacc);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,3 +67,15 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+function getByValue(arr, value) {
+
+    for (var i=0, iLen=arr.length; i<iLen; i++) {
+
+        if (arr[i].email === value) return arr[i];
+    }
+}
+
+function login() {
+    loggedIn = true;
+}
