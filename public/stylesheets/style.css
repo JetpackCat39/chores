@@ -3,7 +3,6 @@
 
 body {
   padding: 50px;
-  font: 14px 'Roboto', sans-serif;
   background: #eee;
 }
 
@@ -28,8 +27,10 @@ a {
 }
 
 .login > h1 {
-  color: #686f7a;
-  padding-top: 50px !important;
+  /*color: #686f7a;*/
+  font: 32px 'Roboto', sans-serif;
+  padding-top: 50px;
+  color: #4d4d4d;
   font-weight: 100;
 }
 
@@ -37,9 +38,13 @@ a {
   border: none;
   background: #eee;
   border-radius: 5px;
-  color: #686f7a;
+  color: #4d4d4d;
+  padding-left: 10px;
+  font: 14px 'Roboto', sans-serif;
+  height: 80px;
 }
 
-.login > input::selection {
-  border: none;
+.login > input:focus {
+  outline: none;
+  color: #4d4d4d;
 }
