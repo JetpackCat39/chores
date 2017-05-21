@@ -12,16 +12,16 @@ var database = null;
 
 var MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://admin:password@ds149201.mlab.com:49201/taskmaster', function (err, db) {
-    if (err) throw err;
-    database = db;
-    db.collection('users').find().toArray(function (err, result) {
-        if (err) throw err;
-
-        // console.log(getByValue(result, "evan.thurston@gmail.com"))
-        console.log(result)
-    })
-});
+// MongoClient.connect('mongodb://admin:password@ds149201.mlab.com:49201/taskmaster', function (err, db) {
+//     if (err) throw err;
+//     database = db;
+//     db.collection('users').find().toArray(function (err, result) {
+//         if (err) throw err;
+//
+//         result.push({'name': 'test', 'email': 'onetwo', 'password': 'three', 'level': 'subordinate'});
+//         console.log(result)
+//     })
+// });
 
 var loggedIn = false;
 
